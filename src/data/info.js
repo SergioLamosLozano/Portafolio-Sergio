@@ -177,7 +177,7 @@ export const portfolioProjects = [
 export const contactInfo = {
   email: "sergiolamoslozano@gmail.com",
   socialPlatformLinks: {
-    github: "YOUR_GITHUB_PROFILE_LINK", 
+    github: "https://github.com/SergioLamosLozano", 
     linkedin: "https://www.linkedin.com/in/sergiolamoslozano99/", 
     whatsapp: "https://api.whatsapp.com/send/?phone=573022076776&text=Hola+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
   }
