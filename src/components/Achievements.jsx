@@ -3,6 +3,13 @@ import { ExternalLink, Award } from 'lucide-react';
 import { achievements } from '../data/info';
 
 export const Achievements = () => {
+  const getImageUrl = (path) => {
+    if (!path) return "https://via.placeholder.com/600x400/10B981/FFFFFF?text=Diploma+Placeholder";
+    if (path.startsWith('http')) return path;
+    const base = import.meta.env.BASE_URL || '/';
+    return path.startsWith('/') ? base + path.slice(1) : base + path;
+  };
+
   return (
     <section id="achievements" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
       <div className="text-center mb-16">
@@ -24,7 +31,7 @@ export const Achievements = () => {
             <div className="relative aspect-[4/3] bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
               {/* Image */}
               <img
-                src={item.image || "https://via.placeholder.com/600x400/10B981/FFFFFF?text=Diploma+Placeholder"}
+                src={getImageUrl(item.image)}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
               />
