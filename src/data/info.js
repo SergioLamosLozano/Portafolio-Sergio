@@ -5,7 +5,7 @@ export const personalInfo = {
     "Soy desarrollador de software junior con conocimientos en HTML, CSS, JavaScript, SQL y Python. Me apasiona la tecnología y la investigación aplicada para crear soluciones innovadoras, con el objetivo de seguir creciendo profesionalmente y aportar al éxito de proyectos en el sector tecnológico.",
     "Actualmente curso el sexto semestre de Tecnología en Desarrollo de Software en la Universidad del Valle, donde he participado en eventos de investigación como RREDSI y formo parte del semillero IDICA, fortaleciendo mis habilidades en investigación aplicada y desarrollo de proyectos."
   ],
-  cvLink: "https://drive.google.com/file/d/1WHp0KM2eG0QVJQhY4birTNCv_Db9Z1ee/view?usp=sharing"
+  cvLink: "https://drive.google.com/file/d/1wBsUegQOTHVAp7L7Y1M3elPzGHbj9dIs/view?usp=sharing"
 };
 
 
@@ -17,7 +17,7 @@ export const whatIDo = [
 ];
 
 export const skills = {
-  technical: ["React", "JavaScript", "Tailwind CSS", "HTML5 & CSS3", "Git & GitHub", "Vite", "Python", "Django", "SQL", "PostgreSQL", "MySQL", "Trello", "ClickUp", "Ingles A2"],
+  technical: ["React", "JavaScript", "Tailwind CSS", "HTML5 & CSS3", "Git & GitHub", "Python", "Django", "SQL", "PostgreSQL", "MySQL", "FastAPI", "Trello", "ClickUp", "Ingles A2"],
   soft: ["Trabajo en Equipo", "Comunicación Asertiva", "Resolución de Problemas", "Aprendizaje Continuo", "Autogestión", "Adaptabilidad", "Responsabilidad", "Proactividad"],
 };
 

@@ -24,7 +24,28 @@ export default {
           dark: "#0F172A",
           darker: "#020617",
         }
-      }
+      },
+      animation: {
+        'gradient-x': 'gradient-x 3s ease infinite',
+        'bounce-subtle': 'bounce-subtle 0.6s ease-out forwards',
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
+        'bounce-subtle': {
+          '0%': { transform: 'translate(-50%, 0) scale(0.8)', opacity: '0' },
+          '50%': { transform: 'translate(-50%, -15px) scale(1.1)', opacity: '1' },
+          '100%': { transform: 'translate(-50%, -10px) scale(1)', opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
