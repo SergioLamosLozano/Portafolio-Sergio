@@ -12,32 +12,51 @@ const iconMap = {
 export const About = () => {
   return (
     <section id="about" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
-      <div className="flex flex-col md:flex-row gap-12 items-center">
-        <div className="flex-1 space-y-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            Hola, soy <span className="text-portfolio-magenta">{personalInfo.name}</span>
+      <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-16 items-center justify-between">
+        <div className="flex-1 space-y-6 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+            Hola, soy <span className="text-portfolio-magenta block mt-2">{personalInfo.name}</span>
           </h1>
-          <h2 className="text-2xl text-portfolio-green font-medium">
+          <h2 className="text-xl md:text-2xl text-portfolio-green font-medium">
             {personalInfo.title}
           </h2>
           <div className="space-y-4">
             {personalInfo.introduction.map((text, index) => (
-              <p key={index} className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              <p key={index} className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                 {text}
               </p>
             ))}
           </div>
 
-          <div className="pt-4">
+          <div className="pt-6 flex justify-center md:justify-start">
             <a
               href={personalInfo.cvLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-portfolio-magenta hover:bg-portfolio-magenta-dark text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-portfolio-magenta hover:bg-portfolio-magenta-dark text-white font-semibold rounded-xl shadow-lg shadow-portfolio-magenta/20 hover:shadow-portfolio-magenta/40 hover:-translate-y-1 transition-all duration-300"
             >
               <Download className="w-5 h-5" />
               Descargar CV
             </a>
+          </div>
+        </div>
+
+        {/* Photo Container */}
+        <div className="shrink-0 relative group mt-8 md:mt-0">
+          <div className="absolute -inset-1 bg-gradient-to-tr from-portfolio-magenta to-portfolio-green rounded-[2rem] md:rounded-[3rem] blur-lg md:blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+          
+          <div className="relative w-56 h-56 min-[400px]:w-64 min-[400px]:h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] bg-white dark:bg-portfolio-darker rounded-[2rem] md:rounded-[3rem] border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+            {personalInfo.image ? (
+              <img src={personalInfo.image} alt={personalInfo.name} className="w-full h-full object-cover" />
+            ) : (
+              <div className="text-center p-6 bg-gray-50 dark:bg-portfolio-dark/50 w-full h-full flex flex-col items-center justify-center text-gray-400 dark:text-gray-500">
+                <svg className="w-16 h-16 md:w-20 md:h-20 mb-4 text-gray-300 dark:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <p className="text-sm md:text-base font-semibold">Espacio para tu foto</p>
+                <p className="text-xs md:text-sm mt-2 opacity-70 px-4">Guarda tu foto en la carpeta public y añade el nombre en info.js (ej. "/foto.jpg")</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

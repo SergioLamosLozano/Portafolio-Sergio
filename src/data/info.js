@@ -1,11 +1,12 @@
 export const personalInfo = {
   name: "Sergio Lamos Lozano",
   title: "Tecnólogo en Desarrollo de Software",
+  image: "./fotoperfil.png",
   introduction: [
-    "Soy desarrollador de software junior con conocimientos en HTML, CSS, JavaScript, SQL y Python. Me apasiona la tecnología y la investigación aplicada para crear soluciones innovadoras, con el objetivo de seguir creciendo profesionalmente y aportar al éxito de proyectos en el sector tecnológico.",
+    "Soy desarrollador de software junior con conocimientos en HTML5, CSS3, JavaScript, React, FastApi, MySQL y Python. Me apasiona la tecnología y la investigación aplicada para crear soluciones innovadoras, con el objetivo de seguir creciendo profesionalmente y aportar al éxito de proyectos en el sector tecnológico.",
     "Actualmente curso el sexto semestre de Tecnología en Desarrollo de Software en la Universidad del Valle, donde he participado en eventos de investigación como RREDSI y formo parte del semillero IDICA, fortaleciendo mis habilidades en investigación aplicada y desarrollo de proyectos."
   ],
-  cvLink: "https://drive.google.com/file/d/1wBsUegQOTHVAp7L7Y1M3elPzGHbj9dIs/view?usp=sharing"
+  cvLink: "https://drive.google.com/file/d/1W8lrO1s3NImbwW0agbHWdxVCCb7umv-E/view?usp=sharing"
 };
 
 
@@ -152,33 +153,33 @@ export const portfolioProjects = [
     title: "SRP - Software Rafael Pombo",
     description: "Sistema de gestión academica para el coelgio Rafael Pombo, permite gestionar estudiantes, notas, asistencia y mas.",
     technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
-    liveLink: "https://portafolio-virtual-sergio.netlify.app/portafolio", 
-    githubLink: "https://github.com/SergioLamosLozano/Proyecto_SRP", 
+    liveLink: "https://portafolio-virtual-sergio.netlify.app/portafolio",
+    githubLink: "https://github.com/SergioLamosLozano/Proyecto_SRP",
   },
   {
     id: 2,
     title: "De Pies a Cabeza",
     description: "Aplicación para el salon de belleza De pies a Cabeza, permite gestionar ventas, inventario, clientes y mas.",
     technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
-    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE", 
-    githubLink: "https://github.com/juanmanuelquintero/ProyectoDesarrolloSoftware", 
+    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE",
+    githubLink: "https://github.com/juanmanuelquintero/ProyectoDesarrolloSoftware",
   },
   {
     id: 3,
     title: "Sistema de Lavado de Autos",
     description: "Sistema de gestión para un lavado de autos, permite gestionar ventas.",
     technologies: ["Python", "Django"],
-    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE", 
-    githubLink: "https://github.com/SergioLamosLozano/FPOE/tree/main/Proyecto%20Final%20-%20Definitivo", 
+    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE",
+    githubLink: "https://github.com/SergioLamosLozano/FPOE/tree/main/Proyecto%20Final%20-%20Definitivo",
   },
-  
+
 ];
 
 export const contactInfo = {
   email: "sergiolamoslozano@gmail.com",
   socialPlatformLinks: {
-    github: "https://github.com/SergioLamosLozano", 
-    linkedin: "https://www.linkedin.com/in/sergiolamoslozano99/", 
+    github: "https://github.com/SergioLamosLozano",
+    linkedin: "https://www.linkedin.com/in/sergiolamoslozano99/",
     whatsapp: "https://api.whatsapp.com/send/?phone=573022076776&text=Hola+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
   }
 };
