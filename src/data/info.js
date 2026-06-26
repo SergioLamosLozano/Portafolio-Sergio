@@ -4,7 +4,7 @@ export const personalInfo = {
   image: "./fotoperfil.png",
   introduction: [
     "Soy desarrollador de software junior con conocimientos en HTML5, CSS3, JavaScript, React, FastApi, MySQL y Python. Me apasiona la tecnología y la investigación aplicada para crear soluciones innovadoras, con el objetivo de seguir creciendo profesionalmente y aportar al éxito de proyectos en el sector tecnológico.",
-    "Actualmente curso el sexto semestre de Tecnología en Desarrollo de Software en la Universidad del Valle, donde he participado en eventos de investigación como RREDSI y formo parte del semillero IDICA, fortaleciendo mis habilidades en investigación aplicada y desarrollo de proyectos."
+    "Actualmente termine el ultimo semestre de Tecnología en Desarrollo de Software en la Universidad del Valle, donde he participado en eventos de investigación como RREDSI y formo parte del semillero IDICA, fortaleciendo mis habilidades en investigación aplicada y desarrollo de proyectos."
   ],
   cvLink: "https://drive.google.com/file/d/1W8lrO1s3NImbwW0agbHWdxVCCb7umv-E/view?usp=sharing"
 };
@@ -44,7 +44,7 @@ export const experience = [
     id: 1,
     title: "Monitor Administrativo",
     company: "Universidad del Valle",
-    period: "2025 - Presente",
+    period: "2024 - 2026",
     description: "Apoyo en procesos de gestión académica y administrativa, atención a estudiantes y colaboración en la organización de eventos institucionales.",
   },
   {
@@ -61,13 +61,7 @@ export const experience = [
     period: "2020 - 2021",
     description: "Me desempeñé como técnico en mantenimiento de computadores y dispositivos electrónicos, realizando instalaciones de software y hardware, así como mantenimiento preventivo y correctivo. Esta labor me permitió desarrollar habilidades en diagnóstico de fallas, optimización de equipos y soporte técnico integral.",
   },
-  {
-    id: 4,
-    title: "Ayudante de Taller",
-    company: "Taller Autoshow",
-    period: "2019 - 2020",
-    description: "Apoyo en labores de mantenimiento y reparación de vehículos.",
-  }
+
 
 ];
 
@@ -147,30 +141,104 @@ export const achievements = [
 ];
 
 
+// ============================================================================
+// ARRAY DE PROYECTOS DEL PORTAFOLIO
+// ============================================================================
+// Cada proyecto debe tener las siguientes propiedades:
+// - id: número único identificador
+// - title: título del proyecto
+// - description: descripción breve del proyecto
+// - technologies: array de strings con las tecnologías utilizadas
+// - images: array de URLs de imágenes para el carrusel (OPCIONAL)
+// - isDeployed: boolean que indica si el proyecto está en producción
+// - liveLink: URL del proyecto desplegado (obligatorio si isDeployed es true)
+// - githubLink: URL del repositorio en GitHub
+// ============================================================================
+
 export const portfolioProjects = [
   {
     id: 1,
-    title: "SRP - Software Rafael Pombo",
-    description: "Sistema de gestión academica para el coelgio Rafael Pombo, permite gestionar estudiantes, notas, asistencia y mas.",
+    title: "Software de Gestión Académica para el Colegio Rafael Pombo (SRP)",
+    description: "Ecosistema digital integral diseñado para modernizar la administración escolar. Cuenta con un panel web robusto para la gestión centralizada de usuarios, matrículas y registro ágil de calificaciones, integrado de forma nativa con una aplicación móvil (React Native + Expo) que permite a los padres de familia monitorear el desempeño académico y la asistencia de sus hijos en tiempo real.",
     technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
+    
+    // TODO: AGREGA TUS IMÁGENES AQUÍ
+    // Las imágenes deben estar en la carpeta 'public'
+    images: [
+      "/SRP/SRP_LOGIN.png",
+      "/SRP/SRP_COOR.png",
+      "/SRP/SRP_COOR2.png",
+      "/SRP/SRP_COOR3.png",
+      "/SRP/SRP_COOR4.png",
+      "/SRP/SRP_DOC1.png",
+      "/SRP/SRP_DOC2.png",
+      "/SRP/SRP_DOC3.png",
+      "/SRP/SRP_PAD1.png",
+      "/SRP/SRP_PAD2.png"
+    ], 
+    
+    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
+    isDeployed: false, // Cambia a false si no está desplegado
+    
+    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN
     liveLink: "https://portafolio-virtual-sergio.netlify.app/portafolio",
+    
+    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
     githubLink: "https://github.com/SergioLamosLozano/Proyecto_SRP",
   },
   {
     id: 2,
-    title: "De Pies a Cabeza",
-    description: "Aplicación para el salon de belleza De pies a Cabeza, permite gestionar ventas, inventario, clientes y mas.",
-    technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
-    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE",
-    githubLink: "https://github.com/juanmanuelquintero/ProyectoDesarrolloSoftware",
+    title: "Deli Burrito: Plataforma de Pedidos y Gestión",
+    description: "Plataforma web a la medida diseñada para digitalizar la recepción de pedidos de un restaurante local. Cuenta con una interfaz móvil para clientes con un constructor de productos de precio dinámico, y un panel de administración en tiempo real para gestionar el flujo de cocina, personalizar el menú, imprimir comandas y automatizar notificaciones.",
+    technologies: ["React", "CSS3", "Inertia.js", "JavaScript", "HTML5", "PHP", "Laravel", "MySQL"],
+    
+    // TODO: AGREGA TUS IMÁGENES AQUÍ
+    images: [
+      "/DELI/DELI_ADMIN1.png",
+      "/DELI/DELI_ADMIN2.png",
+      "/DELI/DELI_ADMIN3.png",
+      "/DELI/DELI_ADMIN4.png",
+      "/DELI/DELI_CLI1.png",
+      "/DELI/DELI_CLI2.png",
+      "/DELI/DELI_CLI3.png",
+      "/DELI/DELI_CLI4.png"
+    ],
+    
+    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
+    isDeployed: true, // Este proyecto NO está desplegado
+    
+    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN (cuando lo despliegues)
+    liveLink: "https://www.deliburrito.com/", // Placeholder, no se usará si isDeployed es false
+    
+    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
+    githubLink: "https://github.com/SergioLamosLozano/Deliburrito.git",
   },
   {
     id: 3,
-    title: "Sistema de Lavado de Autos",
-    description: "Sistema de gestión para un lavado de autos, permite gestionar ventas.",
-    technologies: ["Python", "Django"],
-    liveLink: "YOUR_LIVE_PROJECT_LINK_HERE",
-    githubLink: "https://github.com/SergioLamosLozano/FPOE/tree/main/Proyecto%20Final%20-%20Definitivo",
+    title: "SIGUE - Sistema Integral de Gestión de Eventos Universitarios",
+    description: "Plataforma web integral diseñada para revolucionar la logística de eventos masivos en instituciones educativas. SIGUE automatiza el ciclo de vida completo de un evento: desde la difusión masiva y carga de asistentes vía Excel, hasta el control de acceso en tiempo real utilizando escáneres de Códigos QR nativos en dispositivos móviles. Su arquitectura moderna implementa seguridad estricta basada en roles (RBAC) y un potente motor asíncrono que procesa tareas pesadas en segundo plano —como la generación en lote de certificados PDF y el envío de correos— eliminando los cuellos de botella administrativos, reduciendo el fraude en la entrega de beneficios y garantizando una experiencia fluida de cero papel",
+    technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
+    
+    // TODO: AGREGA TUS IMÁGENES AQUÍ
+    images: [
+      "/SIGUE/SIGUE_LOGIN.png",
+      "/SIGUE/SIGUE_ADMIN.png",
+      "/SIGUE/SIGUE_EVENTO1.png",
+      "/SIGUE/SIGUE_EVENTO2.png",
+      "/SIGUE/SIGUE_EVENTO3.png",
+      "/SIGUE/SIGUE_EVENTO4.png",
+      "/SIGUE/SIGUE_CERT1.png",
+      "/SIGUE/SIGUE_EST.png"
+    ],
+    
+    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
+    isDeployed: false, // Este proyecto NO está desplegado
+    
+    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN (cuando lo despliegues)
+    liveLink: "#",
+    
+    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
+    githubLink: "https://github.com/SergioLamosLozano/SIGUE.git",
   },
 
 ];
