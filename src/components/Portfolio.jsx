@@ -116,12 +116,6 @@ const ProjectCard = ({ project }) => {
   // Resolver las rutas de imágenes usando el mapa de imports
   const resolvedImages = projectImages.map(img => imageMap[img] || img);
 
-  // DEBUG: Ver qué imágenes se están cargando
-  console.log('Proyecto:', project.title);
-  console.log('Imágenes originales:', projectImages);
-  console.log('Imágenes resueltas:', resolvedImages);
-  console.log('Imagen actual:', resolvedImages[currentImageIndex]);
-
   // ========== FUNCIONES DE NAVEGACIÓN DEL CARRUSEL ==========
   
   const handlePrevImage = (e) => {
