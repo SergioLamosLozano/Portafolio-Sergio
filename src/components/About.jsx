@@ -1,6 +1,13 @@
 import React from 'react';
 import { Download, Code2, Layout, Database, Sparkles } from 'lucide-react';
 import { personalInfo, whatIDo, skills } from '../data/info';
+import { 
+  FaReact, FaHtml5, FaCss3Alt, FaPython, FaGithub, FaGitAlt, FaJava, FaNodeJs, FaRobot, FaLanguage, FaTrello,
+  FaUsers, FaRegComments, FaPuzzlePiece, FaBookOpen, FaTasks, FaSyncAlt, FaCheckCircle, FaRocket 
+} from "react-icons/fa";
+import { SiTailwindcss, SiJavascript, SiFastapi, SiMysql, SiDjango, SiPostgresql, SiClickup } from "react-icons/si";
+import { BsDatabase } from "react-icons/bs";
+import { DiScrum } from "react-icons/di";
 
 const iconMap = {
   1: <Code2 className="w-6 h-6 text-portfolio-magenta" />,
@@ -8,6 +15,40 @@ const iconMap = {
   3: <Database className="w-6 h-6 text-portfolio-magenta" />,
   4: <Sparkles className="w-6 h-6 text-portfolio-green" />
 };
+
+const misHabilidades = [
+  { nombre: "React", icono: <FaReact className="text-[#61DAFB] text-lg"/> },
+  { nombre: "JavaScript", icono: <SiJavascript className="text-[#F7DF1E] text-lg"/> },
+  { nombre: "Tailwind CSS", icono: <SiTailwindcss className="text-[#06B6D4] text-lg"/> },
+  { nombre: "HTML5", icono: <FaHtml5 className="text-[#E34F26] text-lg"/> },
+  { nombre: "CSS3", icono: <FaCss3Alt className="text-[#1572B6] text-lg"/> },
+  { nombre: "Git", icono: <FaGitAlt className="text-[#F05032] text-lg"/> },
+  { nombre: "GitHub", icono: <FaGithub className="text-gray-900 dark:text-white text-lg"/> },
+  { nombre: "Python", icono: <FaPython className="text-[#3776AB] text-lg"/> },
+  { nombre: "Django", icono: <SiDjango className="text-[#092E20] dark:text-[#44B78B] text-lg"/> },
+  { nombre: "Java", icono: <FaJava className="text-[#007396] text-lg"/> },
+  { nombre: "Node.js", icono: <FaNodeJs className="text-[#339933] text-lg"/> },
+  { nombre: "SQL", icono: <BsDatabase className="text-gray-500 dark:text-gray-400 text-lg"/> },
+  { nombre: "MySQL", icono: <SiMysql className="text-[#4479A1] text-lg"/> },
+  { nombre: "PostgreSQL", icono: <SiPostgresql className="text-[#336791] text-lg"/> },
+  { nombre: "FastAPI", icono: <SiFastapi className="text-[#009688] text-lg"/> },
+  { nombre: "Trello", icono: <FaTrello className="text-[#0052CC] text-lg"/> },
+  { nombre: "ClickUp", icono: <SiClickup className="text-[#7B68EE] text-lg"/> },
+  { nombre: "Scrum", icono: <DiScrum className="text-[#008CC1] text-lg"/> },
+  { nombre: "IA", icono: <FaRobot className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Inglés A2", icono: <FaLanguage className="text-blue-500 text-lg"/> }
+];
+
+const habilidadesBlandas = [
+  { nombre: "Trabajo en Equipo", icono: <FaUsers className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Comunicación Asertiva", icono: <FaRegComments className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Resolución de Problemas", icono: <FaPuzzlePiece className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Aprendizaje Continuo", icono: <FaBookOpen className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Autogestión", icono: <FaTasks className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Adaptabilidad", icono: <FaSyncAlt className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Responsabilidad", icono: <FaCheckCircle className="text-portfolio-magenta text-lg"/> },
+  { nombre: "Proactividad", icono: <FaRocket className="text-portfolio-magenta text-lg"/> }
+];
 
 export const About = () => {
   return (
@@ -80,20 +121,22 @@ export const About = () => {
         <div className="space-y-6">
           <h3 className="text-2xl font-bold border-l-4 border-portfolio-magenta pl-4">Habilidades Técnicas</h3>
           <div className="flex flex-wrap gap-3">
-            {skills.technical.map(skill => (
-              <span key={skill} className="px-4 py-2 bg-portfolio-green/10 text-portfolio-green-dark dark:text-portfolio-green-light rounded-full text-sm font-medium">
-                {skill}
-              </span>
+            {misHabilidades.map(skill => (
+              <div key={skill.nombre} className="flex items-center gap-2 px-4 py-2 bg-portfolio-green/10 text-portfolio-green-dark dark:text-portfolio-green-light rounded-full text-sm font-medium border border-portfolio-green/20">
+                {skill.icono}
+                <span>{skill.nombre}</span>
+              </div>
             ))}
           </div>
         </div>
         <div className="space-y-6">
           <h3 className="text-2xl font-bold border-l-4 border-portfolio-green pl-4">Habilidades Blandas</h3>
           <div className="flex flex-wrap gap-3">
-            {skills.soft.map(skill => (
-              <span key={skill} className="px-4 py-2 bg-portfolio-magenta/10 text-portfolio-magenta-dark dark:text-portfolio-magenta-light rounded-full text-sm font-medium">
-                {skill}
-              </span>
+            {habilidadesBlandas.map(skill => (
+              <div key={skill.nombre} className="flex items-center gap-2 px-4 py-2 bg-portfolio-magenta/10 text-portfolio-magenta-dark dark:text-portfolio-magenta-light rounded-full text-sm font-medium border border-portfolio-magenta/20">
+                {skill.icono}
+                <span>{skill.nombre}</span>
+              </div>
             ))}
           </div>
         </div>

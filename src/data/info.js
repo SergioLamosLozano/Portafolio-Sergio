@@ -3,35 +3,44 @@ export const personalInfo = {
   title: "Tecnólogo en Desarrollo de Software",
   image: "./fotoperfil.png",
   introduction: [
-    "Soy desarrollador de software junior con conocimientos en HTML5, CSS3, JavaScript, React, FastApi, MySQL y Python. Me apasiona la tecnología y la investigación aplicada para crear soluciones innovadoras, con el objetivo de seguir creciendo profesionalmente y aportar al éxito de proyectos en el sector tecnológico.",
-    "Actualmente termine el ultimo semestre de Tecnología en Desarrollo de Software en la Universidad del Valle, donde he participado en eventos de investigación como RREDSI y formo parte del semillero IDICA, fortaleciendo mis habilidades en investigación aplicada y desarrollo de proyectos."
+    "Recientemente culminé mi formación como Tecnólogo en Desarrollo de Software en la Universidad del Valle, donde fortalecí mis habilidades en investigación aplicada a través del semillero IDICA y eventos como RREDSI. Actualmente, continúo mi evolución académica estudiando Ingeniería de Sistemas y Computación en la Universidad del Quindío.",
+    "Como desarrollador de software junior, complemento esta formación con conocimientos sólidos en HTML5, CSS3, JavaScript, React, FastAPI, MySQL y Python. Me apasiona la tecnología y busco constantemente crear soluciones innovadoras para seguir creciendo profesionalmente y aportar al éxito de los proyectos en los que participo."
   ],
-  cvLink: "https://drive.google.com/file/d/176xAo6YPMsu-8pWJKu2AXGwRUxNVHCLa/view?usp=sharing"
+  cvLink: "https://drive.google.com/file/d/1w1A3goSVdYmJhWyWLn3sz8C0i7NljuNV/view?usp=sharing"
 };
 
 
 export const whatIDo = [
   { id: 1, title: "Web Design", description: "Manejo básico de herramientas como Figma y AdobeXD para realizar diseños web." },
-  { id: 2, title: "Web Development", description: "Desarrollo de sitios web de alta calidad a nivel profesional manejando HTML5, CSS3 y JavaScript." },
-  { id: 3, title: "Backend Integration", description: "Desarrollo de aplicaciones y servicios en el lado del servidor utilizando Python y frameworks como Django." },
+  { id: 2, title: "Web Development", description: "Desarrollo de sitios web de alta calidad a nivel profesional manejando HTML5, CSS3, JavaScript y React." },
+  { id: 3, title: "Backend Integration", description: "Desarrollo de aplicaciones y servicios en el lado del servidor utilizando Python y frameworks como Django y FastAPI." },
   { id: 4, title: "Investigation", description: "Investigación aplicada en el desarrollo de software, participando en eventos como RREDSI y formando parte del semillero IDICA." },
 ];
 
 export const skills = {
-  technical: ["React", "JavaScript", "Tailwind CSS", "HTML5 & CSS3", "Git & GitHub", "Python", "Django", "SQL", "PostgreSQL", "MySQL", "FastAPI", "Trello", "ClickUp", "Ingles A2"],
+  technical: ["React", "JavaScript", "Tailwind CSS", "HTML5 & CSS3", "Git & GitHub", "Python", "Django", "Java", "SQL", "PostgreSQL", "MySQL", "FastAPI", "Trello", "ClickUp", "Ingles A2"],
   soft: ["Trabajo en Equipo", "Comunicación Asertiva", "Resolución de Problemas", "Aprendizaje Continuo", "Autogestión", "Adaptabilidad", "Responsabilidad", "Proactividad"],
 };
 
 export const academicBackground = [
+
   {
     id: 1,
+    title: "Ingeniería de Sistemas y Computación",
+    institution: "Universidad del Quindío",
+    period: "2026 - Presente",
+    description: "Formación avanzada en ingeniería de software, diseño de sistemas complejos, teoría de la computación y análisis de algoritmos, complementada con conocimientos en inteligencia artificial, seguridad de la información e infraestructura tecnológica. El programa expande las competencias en gestión estratégica de proyectos de TI y optimización de recursos, preparando profesionales con visión de liderazgo, capaces de modelar, evaluar y dirigir soluciones computacionales a gran escala e innovadoras.",
+  },
+
+  {
+    id: 2,
     title: "Tecnología en Desarrollo de Software",
     institution: "Universidad del Valle",
     period: "2023 - 2026",
     description: "Formación en bases de datos, lógica de programación, arquitectura de software y desarrollo web integral, complementada con conocimientos en matemáticas aplicadas, redes, sistemas operativos y estadística. El programa fortalece competencias en investigación, gestión de proyectos y desarrollo de aplicaciones móviles, preparando profesionales capaces de diseñar, implementar y optimizar soluciones tecnológicas en diversos entornos.",
   },
   {
-    id: 2,
+    id: 3,
     title: "Bachiller Técnico en Sistemas",
     institution: "I.E Antonio Nariño",
     period: "2015 - 2016",
@@ -155,7 +164,7 @@ export const achievements = [
 
 
 // ============================================================================
-// ARRAY DE PROYECTOS DEL PORTAFOLIO
+// Estructura de los proyectos del portafolio
 // ============================================================================
 // Cada proyecto debe tener las siguientes propiedades:
 // - id: número único identificador
@@ -174,9 +183,7 @@ export const portfolioProjects = [
     title: "Software de Gestión Académica para el Colegio Rafael Pombo (SRP)",
     description: "Ecosistema digital integral diseñado para modernizar la administración escolar. Cuenta con un panel web robusto para la gestión centralizada de usuarios, matrículas y registro ágil de calificaciones, integrado de forma nativa con una aplicación móvil (React Native + Expo) que permite a los padres de familia monitorear el desempeño académico y la asistencia de sus hijos en tiempo real.",
     technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
-    
-    // TODO: AGREGA TUS IMÁGENES AQUÍ
-    // Las imágenes deben estar en la carpeta 'public'
+
     images: [
       "/SRP/SRP_LOGIN.png",
       "/SRP/SRP_COOR.png",
@@ -188,24 +195,24 @@ export const portfolioProjects = [
       "/SRP/SRP_DOC3.png",
       "/SRP/SRP_PAD1.png",
       "/SRP/SRP_PAD2.png"
-    ], 
-    
-    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
-    isDeployed: false, // Cambia a false si no está desplegado
-    
-    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN
+    ],
+
+
+    isDeployed: false,
+
+
     liveLink: "https://portafolio-virtual-sergio.netlify.app/portafolio",
-    
-    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
+
+
     githubLink: "https://github.com/SergioLamosLozano/Proyecto_SRP",
   },
   {
     id: 2,
     title: "Deli Burrito: Plataforma de Pedidos y Gestión",
     description: "Plataforma web a la medida diseñada para digitalizar la recepción de pedidos de un restaurante local. Cuenta con una interfaz móvil para clientes con un constructor de productos de precio dinámico, y un panel de administración en tiempo real para gestionar el flujo de cocina, personalizar el menú, imprimir comandas y automatizar notificaciones.",
-    technologies: ["React", "CSS3", "Inertia.js", "JavaScript", "HTML5", "PHP", "Laravel", "MySQL"],
-    
-    // TODO: AGREGA TUS IMÁGENES AQUÍ
+    technologies: ["React", "Inertia.js", "Tailwind CSS", "JavaScript", "PHP", "Laravel", "MySQL"],
+
+
     images: [
       "/DELI/DELI_ADMIN1.png",
       "/DELI/DELI_ADMIN2.png",
@@ -216,14 +223,12 @@ export const portfolioProjects = [
       "/DELI/DELI_CLI3.png",
       "/DELI/DELI_CLI4.png"
     ],
-    
-    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
-    isDeployed: true, // Este proyecto NO está desplegado
-    
-    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN (cuando lo despliegues)
-    liveLink: "https://www.deliburrito.com/", // Placeholder, no se usará si isDeployed es false
-    
-    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
+
+    isDeployed: true,
+
+    liveLink: "https://www.deliburrito.com/",
+
+
     githubLink: "https://github.com/SergioLamosLozano/Deliburrito.git",
   },
   {
@@ -231,8 +236,8 @@ export const portfolioProjects = [
     title: "SIGUE - Sistema Integral de Gestión de Eventos Universitarios",
     description: "Plataforma web integral diseñada para revolucionar la logística de eventos masivos en instituciones educativas. SIGUE automatiza el ciclo de vida completo de un evento: desde la difusión masiva y carga de asistentes vía Excel, hasta el control de acceso en tiempo real utilizando escáneres de Códigos QR nativos en dispositivos móviles. Su arquitectura moderna implementa seguridad estricta basada en roles (RBAC) y un potente motor asíncrono que procesa tareas pesadas en segundo plano —como la generación en lote de certificados PDF y el envío de correos— eliminando los cuellos de botella administrativos, reduciendo el fraude en la entrega de beneficios y garantizando una experiencia fluida de cero papel",
     technologies: ["React", "CSS3", "Vite", "JavaScript", "HTML5", "Python", "Django", "MySQL"],
-    
-    // TODO: AGREGA TUS IMÁGENES AQUÍ
+
+
     images: [
       "/SIGUE/SIGUE_LOGIN.png",
       "/SIGUE/SIGUE_ADMIN.png",
@@ -243,14 +248,12 @@ export const portfolioProjects = [
       "/SIGUE/SIGUE_CERT1.png",
       "/SIGUE/SIGUE_EST.png"
     ],
-    
-    // TODO: CAMBIA ESTO A TRUE SI EL PROYECTO ESTÁ DESPLEGADO EN PRODUCCIÓN
-    isDeployed: false, // Este proyecto NO está desplegado
-    
-    // TODO: COLOCA AQUÍ EL LINK DE TU PROYECTO EN PRODUCCIÓN (cuando lo despliegues)
+
+
+    isDeployed: false,
+
     liveLink: "#",
-    
-    // TODO: COLOCA AQUÍ EL LINK DE GITHUB
+
     githubLink: "https://github.com/SergioLamosLozano/SIGUE.git",
   },
 
