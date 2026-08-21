@@ -11,6 +11,7 @@
 // ============================================================================
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ExternalLink, MonitorPlay, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { portfolioProjects } from '../data/info';
@@ -80,7 +81,7 @@ const imageMap = {
 // ============================================================================
 export const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
+    <section id="portafolio" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
       {/* Título de la sección */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold inline-block relative">
@@ -143,7 +144,13 @@ const ProjectCard = ({ project }) => {
   // ========== RENDERIZADO DE LA TARJETA ==========
   return (
     <>
-      <div className="group bg-white dark:bg-portfolio-darker rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5 }}
+        className="group bg-white dark:bg-portfolio-darker rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
+      >
         
         {/* ========== CARRUSEL DE IMÁGENES (MÁS GRANDE) ========== */}
         <div 
@@ -271,7 +278,7 @@ const ProjectCard = ({ project }) => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ========== MODAL DE VISTA AMPLIADA ========== */}
       {isModalOpen && hasImages && (

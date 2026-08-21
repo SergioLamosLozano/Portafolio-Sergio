@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ExternalLink, Award } from 'lucide-react';
 import { achievements } from '../data/info';
 
 export const Achievements = () => {
+  const [mostrarTodos, setMostrarTodos] = useState(false);
+  const logrosVisibles = mostrarTodos ? achievements : achievements.slice(0, 6);
+  const restantes = achievements.length - 6;
+
   const getImageUrl = (path) => {
     if (!path) return "https://via.placeholder.com/600x400/10B981/FFFFFF?text=Diploma+Placeholder";
     if (path.startsWith('http')) return path;
@@ -11,7 +16,7 @@ export const Achievements = () => {
   };
 
   return (
-    <section id="achievements" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
+    <section id="logros" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold inline-block relative">
           Logros y Certificaciones
@@ -19,10 +24,14 @@ export const Achievements = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {achievements.map((item) => (
-          <a
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        {logrosVisibles.map((item, index) => (
+          <motion.a
             key={item.id}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4, delay: (index % 3) * 0.1 }}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -53,9 +62,20 @@ export const Achievements = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
+
+      {achievements.length > 6 && (
+        <div className="mt-10 flex justify-center w-full">
+          <button
+            onClick={() => setMostrarTodos(!mostrarTodos)}
+            className="px-6 py-3 rounded-full border border-portfolio-magenta text-portfolio-magenta font-medium hover:bg-portfolio-magenta hover:text-white transition-colors duration-300 shadow-sm"
+          >
+            {mostrarTodos ? "Ver menos" : `Ver ${restantes} certificados más`}
+          </button>
+        </div>
+      )}
     </section>
   );
 };

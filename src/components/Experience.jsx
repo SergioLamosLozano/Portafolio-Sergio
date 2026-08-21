@@ -1,10 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Briefcase, Calendar } from 'lucide-react';
 import { experience } from '../data/info';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 md:px-8 max-w-5xl mx-auto border-b border-gray-200 dark:border-gray-800">
+    <section id="experiencia" className="py-20 px-4 md:px-8 max-w-5xl mx-auto border-b border-gray-200 dark:border-gray-800">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold inline-block relative">
           Experiencia Profesional
@@ -13,8 +14,15 @@ export const Experience = () => {
       </div>
 
       <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-portfolio-magenta before:via-portfolio-green before:to-transparent">
-        {experience.map((item) => (
-          <div key={item.id} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}>
+        {experience.map((item, index) => (
+          <motion.div 
+            key={item.id} 
+            initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}
+          >
             {/* Timeline dot */}
             <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-portfolio-dark bg-portfolio-magenta dark:bg-portfolio-magenta shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform group-hover:scale-110">
               <Briefcase className="w-4 h-4 text-white" />
@@ -35,7 +43,7 @@ export const Experience = () => {
                 {item.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

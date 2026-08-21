@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Copy, Check, ExternalLink } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { contactInfo } from '../data/info';
@@ -14,7 +15,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-8 max-w-5xl mx-auto overflow-hidden">
+    <section id="contacto" className="py-24 px-4 md:px-8 max-w-5xl mx-auto overflow-hidden">
       <div className="text-center mb-16 md:mb-20">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight inline-block relative">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-portfolio-dark dark:from-white to-gray-600 dark:to-gray-400">
@@ -30,7 +31,13 @@ export const Contact = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center bg-white dark:bg-portfolio-darker/50 backdrop-blur-sm p-6 sm:p-8 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-portfolio-magenta/5 border border-gray-100 dark:border-gray-800/50 relative">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center bg-white dark:bg-portfolio-darker/50 backdrop-blur-sm p-6 sm:p-8 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-portfolio-magenta/5 border border-gray-100 dark:border-gray-800/50 relative"
+      >
         
         <div className="space-y-8 flex flex-col justify-center w-full">
           <div className="space-y-2">
@@ -105,7 +112,7 @@ export const Contact = () => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };

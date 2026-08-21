@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Download, Code2, Layout, Database, Sparkles } from 'lucide-react';
 import { personalInfo, whatIDo, skills } from '../data/info';
 import { 
@@ -52,9 +53,15 @@ const habilidadesBlandas = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
+    <section id="sobre-mi" className="py-20 px-4 md:px-8 max-w-6xl mx-auto border-b border-gray-200 dark:border-gray-800">
       <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-16 items-center justify-between">
-        <div className="flex-1 space-y-6 text-center md:text-left">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="flex-1 space-y-6 text-center md:text-left"
+        >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
             Hola, soy <span className="text-portfolio-magenta block mt-2">{personalInfo.name}</span>
           </h1>
@@ -80,10 +87,16 @@ export const About = () => {
               Descargar CV
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Photo Container */}
-        <div className="shrink-0 relative group mt-8 md:mt-0">
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="shrink-0 relative group mt-8 md:mt-0"
+        >
           <div className="absolute -inset-1 bg-gradient-to-tr from-portfolio-magenta to-portfolio-green rounded-[2rem] md:rounded-[3rem] blur-lg md:blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
           
           <div className="relative w-56 h-56 min-[400px]:w-64 min-[400px]:h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] bg-white dark:bg-portfolio-darker rounded-[2rem] md:rounded-[3rem] border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
@@ -99,46 +112,94 @@ export const About = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="mt-24">
         <h3 className="text-3xl font-bold mb-10 text-center">¿Qué Hago?</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {whatIDo.map(item => (
-            <div key={item.id} className="p-6 bg-white dark:bg-portfolio-darker rounded-xl shadow-sm hover:shadow-md border border-gray-100 dark:border-gray-800 transition-all group">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {whatIDo.map((item) => (
+            <motion.div 
+              key={item.id}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+              className="p-6 bg-white dark:bg-portfolio-darker rounded-xl shadow-sm hover:shadow-md border border-gray-100 dark:border-gray-800 transition-all group"
+            >
               <div className="mb-4 p-3 bg-portfolio-white dark:bg-portfolio-dark rounded-lg inline-block group-hover:scale-110 transition-transform">
                 {iconMap[item.id]}
               </div>
               <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
               <p className="text-gray-600 dark:text-gray-400 text-sm  text-justify">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-6">
           <h3 className="text-2xl font-bold border-l-4 border-portfolio-magenta pl-4">Habilidades Técnicas</h3>
-          <div className="flex flex-wrap gap-3">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.05 } }
+            }}
+            className="flex flex-wrap gap-3"
+          >
             {misHabilidades.map(skill => (
-              <div key={skill.nombre} className="flex items-center gap-2 px-4 py-2 bg-portfolio-green/10 text-portfolio-green-dark dark:text-portfolio-green-light rounded-full text-sm font-medium border border-portfolio-green/20">
+              <motion.div 
+                key={skill.nombre} 
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+                }}
+                className="flex items-center gap-2 px-4 py-2 bg-portfolio-green/10 text-portfolio-green-dark dark:text-portfolio-green-light rounded-full text-sm font-medium border border-portfolio-green/20"
+              >
                 {skill.icono}
                 <span>{skill.nombre}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="space-y-6">
           <h3 className="text-2xl font-bold border-l-4 border-portfolio-green pl-4">Habilidades Blandas</h3>
-          <div className="flex flex-wrap gap-3">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.05 } }
+            }}
+            className="flex flex-wrap gap-3"
+          >
             {habilidadesBlandas.map(skill => (
-              <div key={skill.nombre} className="flex items-center gap-2 px-4 py-2 bg-portfolio-magenta/10 text-portfolio-magenta-dark dark:text-portfolio-magenta-light rounded-full text-sm font-medium border border-portfolio-magenta/20">
+              <motion.div 
+                key={skill.nombre} 
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+                }}
+                className="flex items-center gap-2 px-4 py-2 bg-portfolio-magenta/10 text-portfolio-magenta-dark dark:text-portfolio-magenta-light rounded-full text-sm font-medium border border-portfolio-magenta/20"
+              >
                 {skill.icono}
                 <span>{skill.nombre}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

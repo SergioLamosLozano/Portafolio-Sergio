@@ -29,12 +29,12 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { name: 'Sobre mí', href: '#about' },
-    { name: 'Experiencia', href: '#experience' },
-    { name: 'Académico', href: '#academic' },
-    { name: 'Logros', href: '#achievements' },
-    { name: 'Portafolio', href: '#portfolio' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Sobre mí', href: '#sobre-mi' },
+    { name: 'Experiencia', href: '#experiencia' },
+    { name: 'Académico', href: '#academico' },
+    { name: 'Logros', href: '#logros' },
+    { name: 'Portafolio', href: '#portafolio' },
+    { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
