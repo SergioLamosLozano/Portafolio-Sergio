@@ -6,7 +6,7 @@ import {
   FaReact, FaHtml5, FaCss3Alt, FaPython, FaGithub, FaGitAlt, FaJava, FaNodeJs, FaRobot, FaLanguage, FaTrello,
   FaUsers, FaRegComments, FaPuzzlePiece, FaBookOpen, FaTasks, FaSyncAlt, FaCheckCircle, FaRocket 
 } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiFastapi, SiMysql, SiDjango, SiPostgresql, SiClickup } from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiFastapi, SiMysql, SiDjango, SiPostgresql, SiClickup, SiPostman } from "react-icons/si";
 import { BsDatabase } from "react-icons/bs";
 import { DiScrum } from "react-icons/di";
 
@@ -33,6 +33,7 @@ const misHabilidades = [
   { nombre: "MySQL", icono: <SiMysql className="text-[#4479A1] text-lg"/> },
   { nombre: "PostgreSQL", icono: <SiPostgresql className="text-[#336791] text-lg"/> },
   { nombre: "FastAPI", icono: <SiFastapi className="text-[#009688] text-lg"/> },
+  { nombre: "Postman", icono: <SiPostman className="text-[#FF6C37] text-lg"/> },
   { nombre: "Trello", icono: <FaTrello className="text-[#0052CC] text-lg"/> },
   { nombre: "ClickUp", icono: <SiClickup className="text-[#7B68EE] text-lg"/> },
   { nombre: "Scrum", icono: <DiScrum className="text-[#008CC1] text-lg"/> },

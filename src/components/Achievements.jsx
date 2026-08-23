@@ -8,6 +8,16 @@ export const Achievements = () => {
   const logrosVisibles = mostrarTodos ? achievements : achievements.slice(0, 6);
   const restantes = achievements.length - 6;
 
+  const handleToggle = () => {
+    if (mostrarTodos) {
+      // Cuando se contrae, hacemos scroll suave al inicio de proyectos (portafolio)
+      setTimeout(() => {
+        document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
+    setMostrarTodos(!mostrarTodos);
+  };
+
   const getImageUrl = (path) => {
     if (!path) return "https://via.placeholder.com/600x400/10B981/FFFFFF?text=Diploma+Placeholder";
     if (path.startsWith('http')) return path;
@@ -69,7 +79,7 @@ export const Achievements = () => {
       {achievements.length > 6 && (
         <div className="mt-10 flex justify-center w-full">
           <button
-            onClick={() => setMostrarTodos(!mostrarTodos)}
+            onClick={handleToggle}
             className="px-6 py-3 rounded-full border border-portfolio-magenta text-portfolio-magenta font-medium hover:bg-portfolio-magenta hover:text-white transition-colors duration-300 shadow-sm"
           >
             {mostrarTodos ? "Ver menos" : `Ver ${restantes} certificados más`}
